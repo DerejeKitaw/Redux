@@ -5,6 +5,9 @@ import {
   } from './lib/miniRedux';
   
 //#region 01_Define interfaces
+interface AppState {
+    messages: string[];
+  }
 interface AddMessageAction extends Action {
     message: string;
   }
