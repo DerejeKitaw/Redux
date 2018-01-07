@@ -25,3 +25,17 @@ Our app will process two actions:
     type: 'DELETE_MESSAGE', message: 
     index: 2
     }
+
+There are four common non-mutating operations:
+
+    • Adding an item to an array 
+    • Removing an item from an array 
+    • Adding / changing a key in an object 
+    • Removing a key from an object
+
+Our three dispatch statements are a bit ugly for two reasons:
+    
+    1. we manually have to specify the type string each time. We could use a constant, but it would be nice if we didn’t have to do this and 
+    2. we’re manually casting to an AddMessageAction Instead of creating these objects as an object directly we should create a function that will create these objects.
+
+    This idea of writing a function to create actions is so common in Redux that the pattern has a name: Action Creators.
