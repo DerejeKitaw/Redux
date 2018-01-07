@@ -1,20 +1,22 @@
 import {
-    Action,
-    Reducer,
-    Store
-  } from './lib/miniRedux';
-  
+  Action,
+  Reducer,
+  Store,
+  createStore
+} from 'redux';
+
 //#region 01_Define interfaces
 interface AppState {
-    messages: string[];
-  }
+  messages: string[];
+}
+
 interface AddMessageAction extends Action {
-    message: string;
-  }
-  
-  interface DeleteMessageAction extends Action {
-    index: number;
-  }
+  message: string;
+}
+
+interface DeleteMessageAction extends Action {
+  index: number;
+}
 //#endregion 
 
 //#region 01a_Define action creator
@@ -35,12 +37,12 @@ class MessageActions {
 //#endregion 
 
 //#region 02_Define-Store
-  // Done by lib
+// Done by Redux
 //#endregion
-
+let initialState: AppState = { messages: [] };
 //#region 03_Define reducer
 let reducer: Reducer<AppState> =
-  (state: AppState, action: Action) => {
+  (state: AppState = initialState, action: Action) => {
   switch (action.type) {
   case 'ADD_MESSAGE':
     return {
@@ -61,12 +63,12 @@ let reducer: Reducer<AppState> =
 //#endregion 
 
 //#region 04_create new store
-let store = new Store<AppState>(reducer, { messages: [] });
+let store: Store<AppState> = createStore<AppState>(reducer);
 console.log(store.getState()); // -> { messages: [] }
 //#endregion
 
 //#region 05_subscribe to store
-    // Done by lib
+  // Done by Redux
 //#endregion
 
 //#region 06_Dispatch store
@@ -100,5 +102,4 @@ console.log(store.getState());
 // ->
 // { messages: [ 'Has it really got a team of snow white horses?' ] }
 
-  
-//#endregion 
+//#endregion
