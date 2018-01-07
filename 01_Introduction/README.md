@@ -15,3 +15,5 @@
 `This is an important principle of Redux: dispatching actions is a “fire-and-forget” maneuver. Dispatching actions is not a direct manipulation of the state, and it doesn’t return the new state. `
 
 `When we dispatch actions, we’re sending off a notification of what happened. If we want to know what the current state of the system is, we have to check the state of the store.`
+
+## Reducer takes the current state and action and returns a new state, which is held by the store. 
