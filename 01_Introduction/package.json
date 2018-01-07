@@ -1,0 +1,14 @@
+{
+  "name": "redux-introduction",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "author": "Dereje",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node": "2.1.0"
+  },
+  "dependencies": {
+    "redux": "3.5.2"
+  }
+}
