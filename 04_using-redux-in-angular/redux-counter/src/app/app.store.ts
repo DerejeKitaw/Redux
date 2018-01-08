@@ -1,15 +1,8 @@
 import { InjectionToken } from '@angular/core';
-import {
-  createStore,
-  Store,
-  compose,
-  StoreEnhancer
-} from 'redux';
-
+import {createStore, Store, compose, StoreEnhancer } from 'redux';
 import { AppState } from './app.state';
-import {
-  counterReducer as reducer
-} from './counter.reducer';
+import {counterReducer as reducer} from './counter.reducer';
+
 // Store is an interface, not a class and, unfortunately, we can’t use interfaces as a dependency injection key.
 // we can’t use an interface as a DI key, it’s because TypeScript interfaces are removed after compilation and
 // not available at runtime.

@@ -3,10 +3,7 @@
  */
 import { Reducer, Action } from 'redux';
 import { AppState } from './app.state';
-import {
-  INCREMENT,
-  DECREMENT
-} from './counter.actions';
+import {INCREMENT, DECREMENT} from './counter.actions';
 
 const initialState: AppState = { counter: 0 };
 
