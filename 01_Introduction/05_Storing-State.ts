@@ -1,33 +1,30 @@
 //#region interfaces
 interface Action {
-    type: string;
-    payload?: any;
-  }
-  
-  interface Reducer<T> {
-    (state: T, action: Action): T;
-  }
-//#endregion 
+  type: string;
+  payload?: any;
+}
+
+interface Reducer<T> {
+  (state: T, action: Action): T;
+}
+//#endregion
 
 //#region Define-Store
-  class Store<T> {
-    private _state: T;
-  
-    constructor(
-      private reducer: Reducer<T>,
-      initialState: T
-    ) {
-      this._state = initialState;
-    }
-  
-    getState(): T {
-      return this._state;
-    }
-  
-    dispatch(action: Action): void {
-      this._state = this.reducer(this._state, action);
-    }
+class Store<T> {
+  private _state: T;
+
+  constructor(private reducer: Reducer<T>, initialState: T) {
+    this._state = initialState;
   }
+
+  getState(): T {
+    return this._state;
+  }
+
+  dispatch(action: Action): void {
+    this._state = this.reducer(this._state, action);
+  }
+}
 //#endregion
 
 //#region create a new store
@@ -36,8 +33,8 @@ console.log(store.getState()); // -> 0
 //#endregion
 
 //#region Define reducer
-  let reducer: Reducer<number> = (state: number, action: Action) => {
-    switch (action.type) {
+let reducer: Reducer<number> = (state: number, action: Action) => {
+  switch (action.type) {
     case 'INCREMENT':
       return state + 1;
     case 'DECREMENT':
@@ -46,17 +43,17 @@ console.log(store.getState()); // -> 0
       return state + action.payload;
     default:
       return state;
-    }
-  };
-//#endregion 
-  
+  }
+};
+//#endregion
+
 //#region Dispatch store
-  store.dispatch({ type: 'INCREMENT' });
-  console.log(store.getState()); // -> 1
-  
-  store.dispatch({ type: 'INCREMENT' });
-  console.log(store.getState()); // -> 2
-  
-  store.dispatch({ type: 'DECREMENT' });
-  console.log(store.getState()); // -> 1
-//#endregion 
+store.dispatch({ type: 'INCREMENT' });
+console.log(store.getState()); // -> 1
+
+store.dispatch({ type: 'INCREMENT' });
+console.log(store.getState()); // -> 2
+
+store.dispatch({ type: 'DECREMENT' });
+console.log(store.getState()); // -> 1
+//#endregion
