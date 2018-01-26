@@ -1,6 +1,6 @@
 import { AppState } from '../app.state';
 import { AppStore } from '../app.store';
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Store } from 'redux'; // import Store from Redux
 
 import * as CounterActions from '../counter.actions'; // import our action creators
@@ -11,7 +11,7 @@ import * as CounterActions from '../counter.actions'; // import our action creat
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.scss']
 })
-export class CounterComponent implements OnInit {
+export class CounterComponent  {
   counter: number;
   constructor(@Inject(AppStore) private store: Store<AppState>) {
     store.subscribe(() => {this.readState();
@@ -26,7 +26,13 @@ export class CounterComponent implements OnInit {
   }
 
   increment() {
-    this.store.dispatch(CounterActions.increment());
+    if (this.counter == 5) {
+      this.store.dispatch(CounterActions.decrement());
+      
+    } else {
+      this.store.dispatch(CounterActions.increment());
+      
+    }
   }
 
   decrement() {
