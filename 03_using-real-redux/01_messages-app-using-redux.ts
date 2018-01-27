@@ -32,7 +32,9 @@ class MessageActions {
 //#endregion
 
 //#region 02_Define-Store
+
 // Done by Redux
+
 //#endregion
 let initialState: AppState = { messages: [] };
 //#region 03_Define reducer
@@ -65,7 +67,9 @@ console.log(store.getState()); // -> { messages: [] }
 //#endregion
 
 //#region 05_subscribe to store
+
 // Done by Redux
+
 //#endregion
 
 //#region 06_Dispatch store
