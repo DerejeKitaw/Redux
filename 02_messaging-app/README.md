@@ -39,3 +39,4 @@ Our three dispatch statements are a bit ugly for two reasons:
     2. we’re manually casting to an AddMessageAction Instead of creating these objects as an object directly we should create a function that will create these objects.
 
     This idea of writing a function to create actions is so common in Redux that the pattern has a name: Action Creators.
+![message](../02_messaging-app/message_app.png)
