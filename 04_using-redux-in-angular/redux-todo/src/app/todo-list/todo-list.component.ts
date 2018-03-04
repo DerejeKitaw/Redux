@@ -26,11 +26,11 @@ export class TodoListComponent implements OnInit {
   onSubmit() {
     this.ngRedux.dispatch({type: ADD_TODO, todo: this.model});
   }
-  toggleTodo() {
-    this.ngRedux.dispatch({type: TOGGLE_TODO, id: this.todos.id});
+  toggleTodo(todo) {
+    this.ngRedux.dispatch({type: TOGGLE_TODO, id: todo.id});
   }
-  removeTodo() {
-    this.ngRedux.dispatch({type: REMOVE_TODO, id: this.todos.id});
+  removeTodo(todo) {
+    this.ngRedux.dispatch({type: REMOVE_TODO, id: todo.id});
   }
 
 }
