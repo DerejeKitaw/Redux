@@ -28,7 +28,7 @@ export function rootReducer(state: IAppState, action): IAppState {
       const todo = state.todos.find(t => t.id === action.id);
       const index = state.todos.indexOf(todo);
       return Object.assign({}, state, {
-        todo: [
+        todos: [
           ...state.todos.slice(0, index),
           Object.assign({}, todo, { isCompleted: !todo.isCompleted }),
           ...state.todos.slice(index + 1)

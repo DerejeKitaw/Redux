@@ -37,13 +37,13 @@
     <tbody>
       <tr *ngFor="let t of todos | async">
         <td>
-          <span>{{t.id}} </span>
+          <span (click)="toggleTodo(t)" [class.completed]="t.isCompleted" >{{t.id}} </span>
         </td>
         <td>
-          <span>{{t.description}} </span>
+          <span (click)="toggleTodo(t)" [class.completed]="t.isCompleted">{{t.description}} </span>
         </td>
         <td>
-          <span>{{t.responsible}} </span>
+          <span (click)="toggleTodo(t)" [class.completed]="t.isCompleted">{{t.responsible}} </span>
         </td>
         <td>
           <span>{{t.priority}} </span>
