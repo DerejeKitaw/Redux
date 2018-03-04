@@ -10,7 +10,15 @@ import { ITodo } from '../todo';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
+  @select() todos;
 
+  model: ITodo = {
+    id: 0,
+    description: '',
+    responsible: '',
+    prioprity: 'low',
+    isCompleted: false
+  };
   constructor(private ngRedux: NgRedux<IAppState>) {}
 
   ngOnInit() {}
