@@ -16,7 +16,7 @@ export const INITIAL_STATE: IAppState = {
   lastUpdate: null
 };
 
-export function rootReducer(state, action) {
+export function rootReducer(state: IAppState, action): IAppState {
   switch (action.type) {
     case ADD_TODO:
       action.todo.id = state.todos.length + 1;
