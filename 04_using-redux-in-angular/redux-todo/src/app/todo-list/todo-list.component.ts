@@ -16,7 +16,7 @@ export class TodoListComponent implements OnInit {
     id: 0,
     description: '',
     responsible: '',
-    prioprity: 'low',
+    priority: 'low',
     isCompleted: false
   };
   constructor(private ngRedux: NgRedux<IAppState>) {}
