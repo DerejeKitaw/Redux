@@ -15,7 +15,7 @@ export class TodoOverviewComponent implements OnInit {
   constructor(private ngRedux: NgRedux<IAppState>) {}
 
   ngOnInit() {
-    console.log('Todos' + this.todos.length);
+    console.log('Todos' + this.todos);
   }
 
   clearTodos() {

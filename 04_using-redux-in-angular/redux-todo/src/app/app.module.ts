@@ -23,7 +23,7 @@ import { TodoOverviewComponent } from './todo-overview/todo-overview.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  Constructor (ngRedux: NgRedux<IAppState>) {
+  constructor (ngRedux: NgRedux<IAppState>) {
     ngRedux.configureStore(rootReducer, INITIAL_STATE);
   }
  }
